@@ -1,0 +1,36 @@
+.ndAccordion {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.ndAccordion:after {
+    content: '';
+    clear: both;
+}
+
+.ndAccordion .ndAccordion-ItemsHolder {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ndAccordion .ndAccordion-Item {
+    display: block;
+    float: left;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000000;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+}

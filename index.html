@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link href="css/ndAccordion.css" rel="stylesheet"/>
+
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script src="js/ndCycler.js"></script>
+    <script src="js/ndAccordion.js"></script>
+
+    <title>Accordion</title>
+
+    <style>
+        body, html {
+            position: relative;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #000000;
+        }
+        
+        .content {
+            display: none;
+            position: absolute;
+            bottom: 0.5em;
+            left: 50%;
+            transform: translateX(-50%);
+            vertical-align: middle;
+            border-radius: 2em;
+            text-align: center;
+            background: #000000;
+            color: #ffffff;
+            font-family: sans-serif;
+            font-size: 100%;
+            padding: 0.5em 1.5em;
+            margin: 0;
+        }
+
+        .accordion {
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid #333333;
+            border-left: none;
+            border-right: none;
+        }
+        
+        .ndAccordion-Item {
+            border-right: 1px solid #000000;
+            filter: grayscale(100%);
+            box-shadow: 0 0 20px #000000;
+        }
+
+        .ndAccordion-Item:last-child {
+            border-right: none;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $('.accordion').ndAccordion({
+                ratio: '16:9',
+                onOpen: function(item) {
+                    item.children('.content').css('display', 'block');
+                    item.css('filter', 'grayscale(0%)');
+                },
+                onClose: function(item) {
+                    item.children('.content').css('display', 'none');
+                    item.css('filter', 'grayscale(100%)');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="accordion">
+        <div style="background-image: url('images/1.jpg')">
+            <div class="content">thor</div>
+        </div>
+        <div style="background-image: url('images/2.jpg')">
+            <div class="content">hulk</div>
+        </div>
+        <div style="background-image: url('images/3.jpg')">
+            <div class="content">loki</div>
+        </div>
+        <div style="background-image: url('images/4.jpg')">
+            <div class="content">joker</div>
+        </div>
+        <div style="background-image: url('images/5.jpg')">
+            <div class="content">venom</div>
+        </div>
+        <div style="background-image: url('images/6.jpg')">
+            <div class="content">harley quinn</div>
+        </div>
+        <div style="background-image: url('images/7.jpg')">
+            <div class="content">bane</div>
+        </div>
+        <div style="background-image: url('images/8.jpg')">
+            <div class="content">hela</div>
+        </div>
+    </div>
+</body>
+</html>
